@@ -19,7 +19,7 @@ window.onload = function() {
             var variable = 800;
             // 动态生成span
             var oDan1 = document.createElement("span");
-            oDan1.id = "oDan1";
+            //oDan1.id = "oDan1";
             oDan1.innerHTML = oText.value;
             //设置弹幕滚动，我这里思想是让他的margin递减直到出了屏幕范围
             timer = setInterval(function () {

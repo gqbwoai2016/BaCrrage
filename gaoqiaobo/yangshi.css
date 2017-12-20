@@ -22,6 +22,9 @@ html,body{
 span{
     /*强制不换行*/
     white-space: nowrap;
+    display: block;
+    float: left;
+    /*overflow: hidden;*/
 }
 #mainScreen{
     width: 800px;
