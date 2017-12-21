@@ -9,6 +9,13 @@ window.onload = function(){
     oText.onclick = function(){
         oText.value = "";
     };
+    document.onkeydown = function(evt){
+        var event = evt || window.event;//兼容IE
+        if(event.keyCode == 13){
+            //监听回车事件
+            sendMessage();
+        }
+    };
     function sendMessage(){
 
         if(oText.value.trim() == ""){
@@ -41,7 +48,7 @@ window.onload = function(){
 
             // Move
             var variable = 800;
-            var timer = setInterval(function () {
+             var timer = setInterval(function () {
                 oDan1.style.marginLeft = variable + "px";
                 if (variable > -oDan1.offsetWidth){
                     variable-=2;
@@ -49,15 +56,14 @@ window.onload = function(){
                     // oDan1.style.marginLeft = variable + "px";
                 }
                 else {
-                    // 当显示超出范围就删除节点，这里我之前用display:none不管用
-                    oDan1.parentNode.removeChild(oDan1);
                     clearInterval(timer);
 
-                }
+                    // 当显示超出范围就删除节点，这里我之前用display:none不管用
+                    oDan1.parentNode.removeChild(oDan1);
 
+                }
             }, 1);
         }
-        console.log(variable);
     }
 // window结束括号
 }

@@ -22,8 +22,7 @@ html,body{
 span{
     /*强制不换行*/
     white-space: nowrap;
-    display: block;
-    float: left;
+    position:absolute;
     /*overflow: hidden;*/
 }
 #mainScreen{
