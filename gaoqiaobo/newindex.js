@@ -2,8 +2,6 @@ window.onload = function(){
     var oBtn = document.getElementById("btn");
     var oText = document.getElementById("txt");
     var oScreen = document.getElementById("mainScreen");
-    var i = 0;
-    var oDan1;
     oBtn.onclick = sendMessage;
     // 每次点击清空输入框
     oText.onclick = function(){
@@ -26,12 +24,10 @@ window.onload = function(){
             var oDan1 = document.createElement("span");
 
             oDan1.innerText = oText.value;
-
             // oScreen.appendChild(oDan);
             // oDan.setAttribute("Id","oDan_"+i);
             // oDan1 = document.getElementById("oDan_"+i);
             // console.log(oDan1);
-
 
             // 定义字体大小
             var oFontSize  = parseInt(Math.random()*16+16);
@@ -49,15 +45,13 @@ window.onload = function(){
             // Move
             var variable = 800;
              var timer = setInterval(function () {
-                oDan1.style.marginLeft = variable + "px";
+                 oScreen.appendChild(oDan1);
+                 oDan1.style.marginLeft = variable + "px";
                 if (variable > -oDan1.offsetWidth){
                     variable-=2;
-                    oScreen.appendChild(oDan1);
-                    // oDan1.style.marginLeft = variable + "px";
                 }
                 else {
                     clearInterval(timer);
-
                     // 当显示超出范围就删除节点，这里我之前用display:none不管用
                     oDan1.parentNode.removeChild(oDan1);
 

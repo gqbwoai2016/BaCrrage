@@ -23,22 +23,24 @@ window.onload = function() {
             oDan1.innerHTML = oText.value;
             //设置弹幕滚动，我这里思想是让他的margin递减直到出了屏幕范围
             timer = setInterval(function () {
+                oDan1.style.marginLeft = variable + "px";
+                oScreen.appendChild(oDan1);
+
                 if (variable > -130) {
                     variable--;
                     /* oScreen.append这一行代码插入到视频显示框中,不加到外面是因为在外面的话，
                     会在屏幕显示一下文本，然后才会挪动到800px处 */
-                    oScreen.appendChild(oDan1);
-                    oDan1.style.marginLeft = variable + "px";
-                    oBtn.onclick = function tanchu(){
-                        oAlert.style.display = "block";
-                    };
+                    // oBtn.onclick = function tanchu(){
+                    //     oAlert.style.display = "block";
+                    // };
                 }
                 else {
                     // 当显示超出范围就删除节点，这里我之前用display:none不管用
-                    oDan1.parentNode.removeChild(oDan1);
                     clearInterval(timer);
+
+                    oDan1.parentNode.removeChild(oDan1);
                     // 重定向点击事件指定的函数
-                    oBtn.onclick = goTo;
+                    //  oBtn.onclick = goTo;
                 }
             }, 1);
         };
